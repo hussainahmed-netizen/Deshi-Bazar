@@ -1,0 +1,31 @@
+{
+  "name": "Review",
+  "type": "object",
+  "properties": {
+    "product_id": {
+      "type": "string",
+      "title": "Product ID"
+    },
+    "user_email": {
+      "type": "string",
+      "title": "User Email"
+    },
+    "user_name": {
+      "type": "string",
+      "title": "User Name"
+    },
+    "rating": {
+      "type": "number",
+      "title": "Rating"
+    },
+    "comment": {
+      "type": "string",
+      "title": "Comment"
+    }
+  },
+  "required": [
+    "product_id",
+    "user_email",
+    "rating"
+  ]
+}

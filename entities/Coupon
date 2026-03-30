@@ -1,0 +1,67 @@
+{
+  "name": "Coupon",
+  "type": "object",
+  "properties": {
+    "code": {
+      "type": "string",
+      "title": "Coupon Code"
+    },
+    "description": {
+      "type": "string",
+      "title": "Description"
+    },
+    "image_url": {
+      "type": "string",
+      "title": "Banner Image URL"
+    },
+    "bg_color": {
+      "type": "string",
+      "title": "Background Color"
+    },
+    "discount_type": {
+      "type": "string",
+      "title": "Discount Type",
+      "enum": [
+        "percentage",
+        "fixed"
+      ]
+    },
+    "amount": {
+      "type": "number",
+      "title": "Discount Amount"
+    },
+    "min_order": {
+      "type": "number",
+      "title": "Minimum Order (BDT)"
+    },
+    "max_uses": {
+      "type": "number",
+      "title": "Max Uses (0 = unlimited)"
+    },
+    "used_count": {
+      "type": "number",
+      "title": "Times Used"
+    },
+    "expiry_date": {
+      "type": "string",
+      "title": "Expiry Date"
+    },
+    "eligible_product_ids": {
+      "type": "array",
+      "title": "Eligible Product IDs",
+      "items": {
+        "type": "string"
+      }
+    },
+    "is_active": {
+      "type": "boolean",
+      "title": "Active"
+    }
+  },
+  "required": [
+    "code",
+    "discount_type",
+    "amount",
+    "is_active"
+  ]
+}

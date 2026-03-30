@@ -1,0 +1,45 @@
+{
+  "name": "CartItem",
+  "type": "object",
+  "properties": {
+    "product_id": {
+      "type": "string",
+      "title": "Product ID"
+    },
+    "product_name": {
+      "type": "string",
+      "title": "Product Name"
+    },
+    "product_image": {
+      "type": "string",
+      "title": "Product Image"
+    },
+    "price": {
+      "type": "number",
+      "title": "Price"
+    },
+    "quantity": {
+      "type": "number",
+      "title": "Quantity"
+    },
+    "size": {
+      "type": "string",
+      "title": "Size"
+    },
+    "color": {
+      "type": "string",
+      "title": "Color"
+    },
+    "user_email": {
+      "type": "string",
+      "title": "User Email"
+    }
+  },
+  "required": [
+    "product_id",
+    "product_name",
+    "price",
+    "quantity",
+    "user_email"
+  ]
+}

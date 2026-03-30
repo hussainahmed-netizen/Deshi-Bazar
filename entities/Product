@@ -1,0 +1,90 @@
+{
+  "name": "Product",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "title": "Product Name"
+    },
+    "slug": {
+      "type": "string",
+      "title": "Slug"
+    },
+    "description": {
+      "type": "string",
+      "title": "Description"
+    },
+    "price": {
+      "type": "number",
+      "title": "Price (BDT)"
+    },
+    "original_price": {
+      "type": "number",
+      "title": "Original Price (BDT)"
+    },
+    "category": {
+      "type": "string",
+      "title": "Category"
+    },
+    "images": {
+      "type": "array",
+      "title": "Images",
+      "items": {
+        "type": "string"
+      }
+    },
+    "sizes": {
+      "type": "array",
+      "title": "Available Sizes",
+      "items": {
+        "type": "string"
+      }
+    },
+    "colors": {
+      "type": "array",
+      "title": "Available Colors",
+      "items": {
+        "type": "string"
+      }
+    },
+    "stock": {
+      "type": "number",
+      "title": "Stock Quantity"
+    },
+    "is_featured": {
+      "type": "boolean",
+      "title": "Featured"
+    },
+    "is_flash_deal": {
+      "type": "boolean",
+      "title": "Flash Deal"
+    },
+    "rating": {
+      "type": "number",
+      "title": "Rating"
+    },
+    "review_count": {
+      "type": "number",
+      "title": "Review Count"
+    },
+    "sold_count": {
+      "type": "number",
+      "title": "Sold Count"
+    },
+    "status": {
+      "type": "string",
+      "title": "Status",
+      "enum": [
+        "active",
+        "inactive",
+        "out_of_stock"
+      ]
+    }
+  },
+  "required": [
+    "name",
+    "price",
+    "category",
+    "status"
+  ]
+}

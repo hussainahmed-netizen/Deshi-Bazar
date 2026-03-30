@@ -1,0 +1,22 @@
+{
+  "name": "StoreSettings",
+  "type": "object",
+  "properties": {
+    "key": {
+      "type": "string",
+      "title": "Setting Key"
+    },
+    "value": {
+      "type": "string",
+      "title": "Setting Value"
+    },
+    "group": {
+      "type": "string",
+      "title": "Group"
+    }
+  },
+  "required": [
+    "key",
+    "value"
+  ]
+}

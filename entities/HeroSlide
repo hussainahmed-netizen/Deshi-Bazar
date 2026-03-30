@@ -1,0 +1,42 @@
+{
+  "name": "HeroSlide",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "title": "Title"
+    },
+    "subtitle": {
+      "type": "string",
+      "title": "Subtitle"
+    },
+    "button_text": {
+      "type": "string",
+      "title": "Button Text"
+    },
+    "button_link": {
+      "type": "string",
+      "title": "Button Link"
+    },
+    "image_url": {
+      "type": "string",
+      "title": "Image URL"
+    },
+    "bg_color": {
+      "type": "string",
+      "title": "Background Color (hex)"
+    },
+    "order": {
+      "type": "number",
+      "title": "Display Order"
+    },
+    "is_active": {
+      "type": "boolean",
+      "title": "Active"
+    }
+  },
+  "required": [
+    "title",
+    "is_active"
+  ]
+}
