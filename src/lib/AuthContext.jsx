@@ -68,7 +68,7 @@ export const AuthProvider = ({ children }) => {
       const { error } = await supabase.auth.signInWithOAuth({
         provider: 'google',
         options: {
-          redirectTo: 'http://localhost:3000'
+          redirectTo: 'https://deshi-bazar-ten.vercel.app'
         }
       });
       

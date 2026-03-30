@@ -39,9 +39,15 @@ export default function AdminUsers() {
   }, [isSuperAdmin]);
 
   const loadUsers = async () => {
-    const all = await db.entities.User.list('-created_date', 200);
-    setUsers(all);
-    setLoading(false);
+    try {
+      const all = await db.entities.User.list('-created_date', 200);
+      setUsers(all);
+    } catch (error) {
+      console.error('Failed to load users:', error);
+      toast.error('Failed to load users. Please ensure the users table exists in Supabase.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   const grantAccess = (user) => {

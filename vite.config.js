@@ -5,10 +5,6 @@ import path from 'path'
 // https://vite.dev/config/
 export default defineConfig({
   logLevel: 'error', // Suppress warnings, only show errors
-  server: {
-    port: 3000,
-    host: true,
-  },
   plugins: [
     react(),
   ],
