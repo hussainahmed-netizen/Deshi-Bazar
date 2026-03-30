@@ -1,4 +1,5 @@
 import { db } from '@/lib/db';
+import { supabase } from '@/lib/supabaseClient';
 
 import { useState, useEffect } from 'react';
 
@@ -40,11 +41,26 @@ export default function AdminUsers() {
 
   const loadUsers = async () => {
     try {
-      const all = await db.entities.User.list('-created_date', 200);
-      setUsers(all);
+      // Get current session user (the only user we can access from client-side)
+      const { data: { user } } = await supabase.auth.getUser();
+      
+      if (user) {
+        // Format the current user to match expected format
+        const formattedUser = {
+          id: user.id,
+          email: user.email,
+          full_name: user.user_metadata?.full_name || user.email,
+          role: user.user_metadata?.role || 'super_admin', // Default to super_admin for the owner
+          admin_permissions: user.user_metadata?.admin_permissions || [],
+          created_at: user.created_at,
+        };
+        setUsers([formattedUser]);
+      } else {
+        setUsers([]);
+      }
     } catch (error) {
       console.error('Failed to load users:', error);
-      toast.error('Failed to load users. Please ensure the users table exists in Supabase.');
+      toast.error('Failed to load users from Supabase Auth.');
     } finally {
       setLoading(false);
     }

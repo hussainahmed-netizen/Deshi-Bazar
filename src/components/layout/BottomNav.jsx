@@ -87,7 +87,12 @@ export default function BottomNav() {
               </Link>
             )}
             <button
-              onClick={() => db.auth.logout()}
+              onClick={async () => {
+                await db.auth.logout();
+                setProfileOpen(false);
+                setUser(null);
+                window.location.href = '/';
+              }}
               className="w-full flex items-center gap-3 px-4 py-3 text-sm text-destructive hover:bg-accent transition-colors border-t"
             >
               <LogOut className="h-4 w-4" />
